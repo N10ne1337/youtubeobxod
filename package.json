@@ -1,0 +1,15 @@
+{
+  "name": "youtube-mirror",
+  "version": "1.0.0",
+  "description": "A simple YouTube mirror",
+  "main": "obxod.js",
+  "scripts": {
+    "start": "node obxod.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "request": "^2.88.2"
+  },
+  "author": "dj piska",
+  "license": "MIT"
+}
