@@ -1,13 +1,13 @@
-import webbrowser
-import os
+const express = require('express');
+const request = require('request');
+const app = express();
+const port = process.env.PORT || 3000;
 
-# URL сайта, который нужно открыть
-url = "https://www.youtube.com"
+app.use((req, res) => {
+    const url = `https://www.youtube.com${req.url}`;
+    req.pipe(request(url)).pipe(res);
+});
 
-# Функция для открытия сайта в браузере по умолчанию
-def open_site():
-    webbrowser.open(url, new=2)
-
-# Запуск функции
-if __name__ == "__main__":
-    open_site()
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});
